@@ -5,6 +5,15 @@ do
   export stuff = (require "3D") 250, vp_x, vp_y
   export util  = (require "util")
 
+  require "util/deepcopy"
+
+  export agent_conf = {
+    input_size:  20
+    output_size: 9
+    conns:       3
+    brain_size:  100
+  }
+
   export world = {
     bound_x:  800
     bound_y:  400
