@@ -1,8 +1,12 @@
-export stuff = (require "3D") 180, 640, 480
+do
+  vp_x = love.graphics\getWidth!  / 2
+  vp_y = love.graphics\getHeight! / 2
+
+  export stuff = (require "3D") 250, vp_x, vp_y
 
 x, z = 0, 0
 a    = 0
-r    = 300
+r    = 160
 
 with love
   .update = (dt) ->
@@ -14,4 +18,4 @@ with love
   .draw = ->
     .graphics.setColor 255, 0, 255
 
-    stuff.graphics.circle "fill", x - 300, -300, z + 200, 50
+    stuff.graphics.circle "fill", x, -100, z + 100, 50
