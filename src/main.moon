@@ -12,6 +12,10 @@ do
     output_size: 9
     conns:       3
     brain_size:  100
+    ----------------------------------
+    -- look
+    ----------------------------------
+    radius: 10
   }
 
   export world = {
@@ -28,6 +32,8 @@ do
     rep_rate_c: 7
     rep_rate_h: 7
   }
+
+  export Brain = require "entities/dwraon_brain"
 
 a = 0
 

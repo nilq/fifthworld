@@ -108,17 +108,14 @@ class Agent
 
     @give = 0
 
-    ----------------------------------
-    -- TODO: BRAIN
-    ----------------------------------
-    @brain = "yes hello"
+    @brain = Brain!
 
     @out = {}
-    for i = 1, OUTPUT_SIZE
+    for i = 1, agent_conf.output_size
       @out[i] = 0
 
     @inp = {}
-    for i = 1, INPUT_SIZE
+    for i = 1, agent_conf.input_size
       @inp[i] = 0
 
   init_rate: (size, r, g, b) =>
