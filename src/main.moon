@@ -3,19 +3,31 @@ do
   vp_y = love.graphics\getHeight! / 2
 
   export stuff = (require "3D") 250, vp_x, vp_y
+  export util  = (require "util")
 
-x, z = 0, 0
-a    = 0
-r    = 160
+  export world = {
+    bound_x:  800
+    bound_y:  400
+    bound_z:  800
+    ----------------------------------
+    -- entities and stuff
+    ----------------------------------
+    agents: {}
+    ----------------------------------
+    -- configurations
+    ----------------------------------
+    rep_rate_c: 7
+    rep_rate_h: 7
+  }
+
+a = 0
 
 with love
   .update = (dt) ->
-    a += dt * 2
-
-    x = r * math.cos a
-    z = r * math.sin a
+    a += dt
 
   .draw = ->
-    .graphics.setColor 255, 0, 255
-
-    stuff.graphics.circle "fill", x, -100, z + 100, 50
+    for x = 1, 300, 10
+      for y = 1, 300, 10
+        for z = 1, 300, 10
+          stuff.graphics.circle "fill", x, y, z, 5
